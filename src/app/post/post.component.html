@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let postItem of posts">
+            <div class="heading">
+                <h5>{{postItem.heading}}</h5>
+            </div>
+            <div class="content">
+                <p *ngIf="postItem.content.length > 200">{{postItem.content.slice(0,200)}} <a class="readmore" (click)="singlepost(postItem.id)">read more...</a></p>
+                <p *ngIf="postItem.content.length < 200">{{postItem.content}}</p>               
+            </div>
+            <div class="posted-date">
+                <p>Posted - {{postItem.timestamp | date}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.readmore{
+    color:blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+.content p{
+    margin: 0;
+}
+.posted-date p{
+font-size: 16px;
+color: gray;
+}
