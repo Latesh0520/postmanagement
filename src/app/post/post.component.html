@@ -1,5 +1,14 @@
 <div class="container">
     <div class="row">
+        <div class="col-md-4">
+            <select>
+                <ng-container *ngFor="let datearray of datearray">                    
+                    <option value="{{datearray}}" >{{datearray}}</option>
+                </ng-container>
+            </select>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-4" *ngFor="let postItem of posts">
             <div class="heading">
                 <h5>{{postItem.heading}}</h5>

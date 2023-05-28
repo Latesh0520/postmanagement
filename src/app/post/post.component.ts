@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class PostComponent  implements OnInit{
   
   posts: any;
-
+  datearray: any;
   constructor(private postService: PostService, private router: Router){}
   ngOnInit(): void {
     this.getpost();
@@ -29,11 +29,21 @@ export class PostComponent  implements OnInit{
     .subscribe(Response => {
      console.log(Response); 
       this.posts = Response;
+      this.filterby(Response);    
     })
  }
  singlepost(id: any){
   this.router.navigate(['post-single/'+id]);
  }
-
+ filterby(data:any){
+  const datearray: any[] = []
+  data.forEach((element: {timestamp: any}) => {
+    if (!datearray.includes(element.timestamp)) {
+      datearray.push(element.timestamp)
+    }
+  });
+  this.datearray = datearray;
+  console.log(this.datearray);
+}
 
 }

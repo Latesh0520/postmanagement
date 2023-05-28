@@ -1,1 +1,14 @@
-<p>post-single works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div *ngFor="let post_item of post">
+                <h1>{{post_item.heading}}</h1>
+                <div>
+                    <span><a href=""></a></span>/
+                    <span><a href="">{{post_item.timestamp | date}}</a></span>
+                </div>
+                <p>{{post_item.content}}</p>
+            </div>
+        </div>
+    </div>
+</div>

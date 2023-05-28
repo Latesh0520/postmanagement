@@ -12,4 +12,7 @@ export class PostService {
   getpost(): Observable<any>{
     return this.http.get('https://postmanagement-b4e84-default-rtdb.firebaseio.com/post.json');
   }
+  addPost(data: any): Observable<any>{
+    return this.http.post('https://postmanagement-b4e84-default-rtdb.firebaseio.com/post.json', data)
+  }
 }

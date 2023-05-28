@@ -9,6 +9,8 @@ import { PostSingleComponent } from './post/post-single/post-single.component';
 import { HeaderComponent } from './header-footer/header/header.component';
 import { FooterComponent } from './header-footer/footer/footer.component';
 import { PagenotfoundComponent } from './header-footer/pagenotfound/pagenotfound.component';
+import { AddPostComponent } from './post/add-post/add-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,12 @@ import { PagenotfoundComponent } from './header-footer/pagenotfound/pagenotfound
     PostSingleComponent,
     HeaderComponent,
     FooterComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,  ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
