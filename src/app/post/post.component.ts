@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -9,9 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent  implements OnInit{
-  
+  filterdate: any;
   posts: any;
   datearray: any;
+  datefilter: any;
+  selecteddate = new FormControl()
   constructor(private postService: PostService, private router: Router){}
   ngOnInit(): void {
     this.getpost();
@@ -35,15 +38,17 @@ export class PostComponent  implements OnInit{
  singlepost(id: any){
   this.router.navigate(['post-single/'+id]);
  }
- filterby(data:any){
+  filterby(data:any){
   const datearray: any[] = []
   data.forEach((element: {timestamp: any}) => {
-    if (!datearray.includes(element.timestamp)) {
+      if (!datearray.includes(element.timestamp)) {
       datearray.push(element.timestamp)
-    }
-  });
-  this.datearray = datearray;
-  console.log(this.datearray);
-}
-
+      }
+    });
+    this.datearray = datearray;
+    console.log(this.datearray)
+  }
+  filterbyDate(){
+  this.datefilter = this.selecteddate.value;
+  }
 }

@@ -11,6 +11,7 @@ import { FooterComponent } from './header-footer/footer/footer.component';
 import { PagenotfoundComponent } from './header-footer/pagenotfound/pagenotfound.component';
 import { AddPostComponent } from './post/add-post/add-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { filterbydate } from './pipes/filterbydate.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     PagenotfoundComponent,
-    AddPostComponent
+    AddPostComponent,
+    filterbydate
   ],
   imports: [
     BrowserModule,
